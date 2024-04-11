@@ -46,10 +46,10 @@ INSERT INTO questions (question, reponse) VALUES
                                               ('Quelle est la plus grande planète du système solaire ?', 'Jupiter'),
                                               ('Qui a écrit ''Le Petit Prince'' ?', 'Antoine de Saint-Exupéry');
 
-INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, image)
-VALUES ('Mon super quizz', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, null);
-INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10,image)
-VALUES ('Autre quizz', 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, null);
+INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+VALUES ('Mon super quizz', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
+VALUES ('Autre quizz', 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
 
  CREATE SEQUENCE ma_secance;
  ALTER SEQUENCE ma_secance RESTART 10000 increment by 50;
