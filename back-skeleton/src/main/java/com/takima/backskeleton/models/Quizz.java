@@ -10,7 +10,6 @@ import java.util.List;
 @Table(name = "quizz")
 @Getter
 @Setter
-
 public class Quizz {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ma_sequence")
