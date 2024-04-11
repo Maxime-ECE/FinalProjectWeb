@@ -29,7 +29,7 @@ create table student_course
     course_id int not null
 );
 
-drop table if exists users;
+
 create table users
 (
     id SERIAL PRIMARY KEY,
@@ -48,7 +48,7 @@ CREATE TABLE questions (
                            question VARCHAR NOT NULL,
                            reponse VARCHAR NOT NULL
 );
-
+drop table if exists quizz;
 CREATE TABLE quizz (
                        id SERIAL PRIMARY KEY,
                        titre varchar NOT NULL,
@@ -61,6 +61,14 @@ CREATE TABLE quizz (
                        q7 INT NOT NULL REFERENCES questions(id),
                        q8 INT NOT NULL REFERENCES questions(id),
                        q9 INT NOT NULL REFERENCES questions(id),
-                       q10 INT NOT NULL REFERENCES questions(id)
+                       q10 INT NOT NULL REFERENCES questions(id),
+                       image BYTEA
+);
+
+create table question_quizz
+(
+    id SERIAL PRIMARY KEY,
+    question_id int not null,
+    quizz_id int not null
 );
 

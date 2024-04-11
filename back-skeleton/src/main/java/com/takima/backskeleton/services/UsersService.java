@@ -46,7 +46,7 @@ public class UsersService {
                 throw new IllegalArgumentException("User object cannot be null");
             }
         } catch (Exception e) {
-            throw new RuntimeException("Error with Student image", e);
+            throw new RuntimeException("Error with Users image", e);
         }
 
 
