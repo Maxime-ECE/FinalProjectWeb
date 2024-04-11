@@ -28,3 +28,39 @@ create table student_course
     student_id int not null,
     course_id int not null
 );
+
+drop table if exists users;
+create table users
+(
+    id SERIAL PRIMARY KEY,
+    nom varchar not null,
+    roles varchar not null,
+    prenom varchar not null,
+    email varchar not null ,
+    password_mdp varchar not null,
+    score int default 0
+);
+
+
+CREATE TABLE questions (
+                           id SERIAL PRIMARY KEY,
+
+                           question VARCHAR NOT NULL,
+                           reponse VARCHAR NOT NULL
+);
+
+CREATE TABLE quizz (
+                       id SERIAL PRIMARY KEY,
+                       titre varchar NOT NULL,
+                       q1 INT NOT NULL REFERENCES questions(id),
+                       q2 INT NOT NULL REFERENCES questions(id),
+                       q3 INT NOT NULL REFERENCES questions(id),
+                       q4 INT NOT NULL REFERENCES questions(id),
+                       q5 INT NOT NULL REFERENCES questions(id),
+                       q6 INT NOT NULL REFERENCES questions(id),
+                       q7 INT NOT NULL REFERENCES questions(id),
+                       q8 INT NOT NULL REFERENCES questions(id),
+                       q9 INT NOT NULL REFERENCES questions(id),
+                       q10 INT NOT NULL REFERENCES questions(id)
+);
+

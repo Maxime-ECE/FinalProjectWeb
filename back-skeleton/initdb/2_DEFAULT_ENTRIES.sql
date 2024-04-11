@@ -23,3 +23,4 @@ INSERT INTO courses (id, name, hours) VALUES (8, 'Lean Management', 30);
 INSERT INTO student_course (id, student_id, course_id) VALUES (1, 1, 7);
 
 
+INSERT INTO users (id, nom, roles, prenom, email, password_mdp, score) VALUES (1, 'Java', 'autist','remy',' etst@test','password',0);

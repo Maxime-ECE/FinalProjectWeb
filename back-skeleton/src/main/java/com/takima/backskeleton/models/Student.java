@@ -46,6 +46,7 @@ public class Student {
         private Instant birthdate;
         private List<Course> courses;
         private Major major;
+        private int score;
 
         public Builder id (Long id) {
             this.id = id;
@@ -76,5 +77,7 @@ public class Student {
         public Student build() {
             return new Student(this);
         }
+
+
     }
 }
