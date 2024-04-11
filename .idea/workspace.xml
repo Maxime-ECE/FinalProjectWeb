@@ -37,6 +37,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/yanis/OneDrive/Bureau/ProjetWeb",
     "nodejs_package_manager_path": "npm",
@@ -124,7 +125,7 @@
       <workItem from="1712835212693" duration="84000" />
       <workItem from="1712835593932" duration="13000" />
       <workItem from="1712835755048" duration="202000" />
-      <workItem from="1712837305037" duration="474000" />
+      <workItem from="1712837305037" duration="791000" />
     </task>
     <servers />
   </component>
