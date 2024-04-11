@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d54cc416-47d9-4130-b89a-e6787b782344" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d54cc416-47d9-4130-b89a-e6787b782344" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +40,8 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/yanis/OneDrive/Bureau/ProjetWeb",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "spring.configuration.checksum": "72f2a0d7ca5ab21184bab8979b2e182a",
     "ts.external.directory.path": "C:\\Users\\yanis\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
@@ -126,7 +124,7 @@
       <workItem from="1712835212693" duration="84000" />
       <workItem from="1712835593932" duration="13000" />
       <workItem from="1712835755048" duration="202000" />
-      <workItem from="1712837305037" duration="185000" />
+      <workItem from="1712837305037" duration="474000" />
     </task>
     <servers />
   </component>
