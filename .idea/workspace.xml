@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d54cc416-47d9-4130-b89a-e6787b782344" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,35 +31,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yanis/OneDrive/Bureau/ProjetWeb&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;72f2a0d7ca5ab21184bab8979b2e182a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\yanis\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/yanis/OneDrive/Bureau/ProjetWeb",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "72f2a0d7ca5ab21184bab8979b2e182a",
+    "ts.external.directory.path": "C:\\Users\\yanis\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;b43f3795-3b69-4963-a7b9-f98226eecbf8&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "b43f3795-3b69-4963-a7b9-f98226eecbf8",
+      "ab2a5644-37ee-4350-b997-871fc09f1762"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.takima.backskeleton.DAO" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackSkeletonApplication">
+    <configuration name="1_TABLES.sql and 1 more" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" />
+      <script-file value="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="ab2a5644-37ee-4350-b997-871fc09f1762" />
+      <method v="2" />
+    </configuration>
     <configuration name="1_TABLES.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" />
       <script-mode>FILE</script-mode>
@@ -94,6 +105,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BackSkeletonApplication" />
+        <item itemvalue="Database Script.1_TABLES.sql and 1 more" />
         <item itemvalue="Database Script.1_TABLES.sql" />
       </list>
     </recent_temporary>
@@ -114,6 +126,7 @@
       <workItem from="1712835212693" duration="84000" />
       <workItem from="1712835593932" duration="13000" />
       <workItem from="1712835755048" duration="202000" />
+      <workItem from="1712837305037" duration="185000" />
     </task>
     <servers />
   </component>
