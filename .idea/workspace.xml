@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="339c806e-e39d-4fb2-9fea-fc858b751200" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Quizz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +30,14 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Maxime/Desktop/ECE/semestre_2/web/FinalProject/epf-front-skeleton-main",
+    "last_opened_file_path": "C:/Users/yanis/OneDrive/Bureau/ProjetWeb",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,6 +50,8 @@
       <updated>1712821789114</updated>
       <workItem from="1712821790203" duration="16000" />
       <workItem from="1712834627599" duration="129000" />
+      <workItem from="1712834792636" duration="233000" />
+      <workItem from="1712835057751" duration="148000" />
     </task>
     <servers />
   </component>
