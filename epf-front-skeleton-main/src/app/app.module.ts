@@ -14,7 +14,15 @@ import { MatIconModule } from "@angular/material/icon"
 import { MatButtonModule } from "@angular/material/button"
 import { MajorsComponent } from "majors/majors.component"
 import { MajorStudentsComponent } from "majors/major-students/major-students.component"
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+import { CardContainerComponent } from './card-container/card-container.component'
+import { ParticiperComponent } from './participer/participer.component';
+import { ClassementComponent } from './classement/classement.component';
+import { CreerComponent } from './creer/creer.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { FooterComponent } from './footer/footer.component';
+import { CreateOwnQuestionsComponent } from './create-own-questions/create-own-questions.component';
+import { CreateWithExistingQuizComponent } from './create-with-existing-quiz/create-with-existing-quiz.component'
 
 @NgModule({
   declarations: [
@@ -25,6 +33,14 @@ import { HttpClientModule } from "@angular/common/http"
     StudentDetailsComponent,
     MajorsComponent,
     MajorStudentsComponent,
+    CardContainerComponent,
+    ParticiperComponent,
+    ClassementComponent,
+    CreerComponent,
+    ConnexionComponent,
+    FooterComponent,
+    CreateOwnQuestionsComponent,
+    CreateWithExistingQuizComponent,
   ],
   imports: [
     BrowserModule,

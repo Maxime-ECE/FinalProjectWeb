@@ -1,0 +1,37 @@
+<body>
+<h1>Mes points</h1>
+<p *ngFor="let name of aaa">{{name.nom}}</p>
+<p *ngFor="let email of aaa">{{email.email}}</p>
+<p *ngFor="let roles of aaa">{{roles.roles}}</p>
+<p *ngFor="let score of aaa">{{score.score}}</p>
+<h2>Leaderboad</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Score</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>John</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Jane</td>
+    <td>950</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Mike</td>
+    <td>90</td>
+  </tr>
+  <!-- Add more rows as needed -->
+  </tbody>
+</table>
+
+</body>

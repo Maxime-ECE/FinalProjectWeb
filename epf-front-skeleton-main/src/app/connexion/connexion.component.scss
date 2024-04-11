@@ -1,0 +1,49 @@
+@use "src/theme";
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  background-color: #f9f9f9;
+  margin-top: 10%;
+}
+h2 {
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 20px;
+
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background: linear-gradient(to right, theme.$common-purple, theme.$common-red);
+  color: #fff;
+  cursor: pointer;
+}
+
+.signup-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #007bff;
+}
