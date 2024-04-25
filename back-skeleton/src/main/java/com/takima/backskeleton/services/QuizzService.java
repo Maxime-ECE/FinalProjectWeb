@@ -47,12 +47,7 @@ public class QuizzService {
         return quizAndQuestions;
     }
 
-    public class QuestionAnswer {
-        private String question;
-        private String answer;
 
-        // getters and setters
-    }
 
     public Map<String, List<Map<String, Object>>> getQuizTitleQuestionsAndAnswersv2() {
         Map<String, List<Map<String, Object>>> quizAndQuestions = new HashMap<>();
@@ -92,8 +87,6 @@ public class QuizzService {
     }
 
 
-
-
     public Map<Integer, Map<String, String>> getQuizTitleQuestionsAndAnswers() {
         Map<Integer, Map<String, String>> quizAndQuestions = new HashMap<>();
         List<Quizz> quizzes = quizzDAO.findAll();
@@ -112,8 +105,6 @@ public class QuizzService {
 
         return quizAndQuestions;
     }
-
-
 
     private Long getQuestionIdForQuiz(Quizz quiz, int questionNumber) {
         switch (questionNumber) {
