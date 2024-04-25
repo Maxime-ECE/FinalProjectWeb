@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d54cc416-47d9-4130-b89a-e6787b782344" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/StringListConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/controllers/QuizzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/controllers/QuizzController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/models/Quizz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/services/QuizzService.java" beforeDir="false" afterPath="$PROJECT_DIR$/back-skeleton/src/main/java/com/takima/backskeleton/services/QuizzService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,17 +64,28 @@
     ],
     "RunConfigurationTargetLRU": [
       "b43f3795-3b69-4963-a7b9-f98226eecbf8",
+      "ab2a5644-37ee-4350-b997-871fc09f1762/database/\"postgres\"",
       "ab2a5644-37ee-4350-b997-871fc09f1762",
-      "ab2a5644-37ee-4350-b997-871fc09f1762/database/\"postgres\""
+      "9c523c70-69da-4b67-a864-46fc79b4f364"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.takima.backskeleton.models" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.takima.backskeleton.DAO" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackSkeletonApplication">
+    <configuration name="1_TABLES.sql " type="DatabaseScript" editBeforeRun="true" temporary="true">
+      <script-file value="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" />
+      <script-file value="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="9c523c70-69da-4b67-a864-46fc79b4f364" />
+      <method v="2" />
+    </configuration>
     <configuration name="1_TABLES.sql and 1 more" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" />
       <script-file value="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" />
@@ -74,11 +93,13 @@
       <data-source id="ab2a5644-37ee-4350-b997-871fc09f1762" />
       <method v="2" />
     </configuration>
-    <configuration name="1_TABLES.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/back-skeleton/initdb/1_TABLES.sql" />
+    <configuration name="2_DEFAULT_ENTRIES.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/back-skeleton/initdb/2_DEFAULT_ENTRIES.sql" />
       <script-mode>FILE</script-mode>
-      <data-source id="ab2a5644-37ee-4350-b997-871fc09f1762" namespace="database/&quot;postgres&quot;" />
+      <data-source id="ab2a5644-37ee-4350-b997-871fc09f1762" />
+      <method v="2" />
+    </configuration>
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
     <configuration name="BackSkeletonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -109,8 +130,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BackSkeletonApplication" />
+        <item itemvalue="Database Script.1_TABLES.sql " />
+        <item itemvalue="HTTP Request.All in generated-requests" />
+        <item itemvalue="Database Script.2_DEFAULT_ENTRIES.sql" />
         <item itemvalue="Database Script.1_TABLES.sql and 1 more" />
-        <item itemvalue="Database Script.1_TABLES.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +156,7 @@
       <workItem from="1712837305037" duration="791000" />
       <workItem from="1712838174080" duration="94000" />
       <workItem from="1714065858693" duration="352000" />
-      <workItem from="1714066222965" duration="254000" />
+      <workItem from="1714066222965" duration="16840000" />
     </task>
     <servers />
   </component>

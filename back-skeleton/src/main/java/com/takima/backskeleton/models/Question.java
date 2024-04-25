@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;  
+import java.util.Arrays;
+import java.util.List;
 
 @Entity
 @Table(name = "questions")
@@ -13,12 +14,22 @@ import java.util.List;
 @Setter
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ma_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    long id ;
-    String question;
-    String reponse;
+    @Column(name = "question", nullable = false)
+    private String question;
+
+    @Column(name = "reponse", nullable = false)
+    private String reponse;
+
+    @Column(name = "choices")
+    @Convert(converter = StringListConverter.class)
+    private List<String> choices;
+
+    @Column(name = "hint")
+    private String hint;
 
 
-
+    // Getters and setters
 }

@@ -42,11 +42,13 @@ create table users
 );
 
 
+drop table if exists questions cascade ;
 CREATE TABLE questions (
                            id SERIAL PRIMARY KEY,
-
                            question VARCHAR NOT NULL,
-                           reponse VARCHAR NOT NULL
+                           reponse VARCHAR NOT NULL,
+                           choices TEXT,  -- Stores multiple choices as a comma-separated string (optional)
+                           hint TEXT  -- Stores the optional hint for the question
 );
 drop table if exists quizz;
 CREATE TABLE quizz (

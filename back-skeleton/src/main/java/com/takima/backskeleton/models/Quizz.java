@@ -28,5 +28,4 @@ public class Quizz {
     @Lob
     @Column
     private byte[] image;
-
 }
