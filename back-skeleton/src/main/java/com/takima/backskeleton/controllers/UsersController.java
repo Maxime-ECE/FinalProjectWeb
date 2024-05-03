@@ -1,5 +1,6 @@
 package com.takima.backskeleton.controllers;
 
+import com.takima.backskeleton.DTO.UserDTO;
 import com.takima.backskeleton.models.Users;
 import com.takima.backskeleton.services.UsersService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ public class UsersController {
     private final UsersService usersService;
 
     @GetMapping("")
-    public List<Users> getAllUsers() {
+    public List<UserDTO> getAllUsers() {
         return usersService.findAll();
     }
 

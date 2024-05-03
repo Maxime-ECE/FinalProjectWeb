@@ -1,5 +1,6 @@
 package com.takima.backskeleton.models;
 
+import com.takima.backskeleton.DTO.UserDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,6 +39,16 @@ public class Users {
 
         // Vérifiez si le mot de passe correspond au mot de passe chiffré stocké
         return passwordEncoder.matches(password, this.password_mdp);
+    }
+    public UserDTO toDTO() {
+        UserDTO dto = new UserDTO();
+        dto.setId(id);
+        dto.setNom(nom);
+        dto.setRoles(roles);
+        dto.setPrenom(prenom);
+        dto.setEmail(email);
+        dto.setScore(score);
+        return dto;
     }
 
     public Users score(int score) {

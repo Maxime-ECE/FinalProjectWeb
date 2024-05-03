@@ -4,8 +4,10 @@ package com.takima.backskeleton.services;
 import com.takima.backskeleton.DAO.UsersDAO;
 import com.takima.backskeleton.DTO.StudentDto;
 import com.takima.backskeleton.DTO.StudentMapper;
+import com.takima.backskeleton.DTO.UserDTO;
 import com.takima.backskeleton.models.Student;
 import com.takima.backskeleton.models.Users;
+import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -15,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 @Service
@@ -23,10 +27,15 @@ public class UsersService {
 
     private final UsersDAO usersDAO;
 
-    public List<Users> findAll()
+    public List<UserDTO> findAll()
     {
-        return usersDAO.findAll();
+
+        List<Users> users = usersDAO.findAll();
+        return users.stream()
+                .map(Users::toDTO)
+                .collect(Collectors.toList());
     }
+
 
     public Users getById(Long id) {
         return usersDAO.findById(id).orElseThrow();
