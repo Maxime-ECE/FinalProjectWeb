@@ -28,6 +28,7 @@ public class QuizzService {
     {
         return quizzDAO.findAll();
     }
+    /*
     public Map<String, List<String>> getQuizTitleAndQuestions() {
         Map<String, List<String>> quizAndQuestions = new HashMap<>();
         List<Quizz> quizzes = quizzDAO.findAll();
@@ -47,7 +48,7 @@ public class QuizzService {
         return quizAndQuestions;
     }
 
-
+*/
 
     public Map<String, List<Map<String, Object>>> getQuizTitleQuestionsAndAnswersv2() {
         Map<String, List<Map<String, Object>>> quizAndQuestions = new HashMap<>();
