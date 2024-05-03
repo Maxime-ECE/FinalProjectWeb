@@ -54,16 +54,7 @@ drop table if exists quizz;
 CREATE TABLE quizz (
                        id SERIAL PRIMARY KEY,
                        titre varchar NOT NULL,
-                       q1 INT NOT NULL REFERENCES questions(id),
-                       q2 INT NOT NULL REFERENCES questions(id),
-                       q3 INT NOT NULL REFERENCES questions(id),
-                       q4 INT NOT NULL REFERENCES questions(id),
-                       q5 INT NOT NULL REFERENCES questions(id),
-                       q6 INT NOT NULL REFERENCES questions(id),
-                       q7 INT NOT NULL REFERENCES questions(id),
-                       q8 INT NOT NULL REFERENCES questions(id),
-                       q9 INT NOT NULL REFERENCES questions(id),
-                       q10 INT NOT NULL REFERENCES questions(id),
+                       question_id TEXT,
                        image BYTEA
 );
 

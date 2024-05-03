@@ -28,44 +28,26 @@ public class QuizzService {
     {
         return quizzDAO.findAll();
     }
-    /*
-    public Map<String, List<String>> getQuizTitleAndQuestions() {
-        Map<String, List<String>> quizAndQuestions = new HashMap<>();
-        List<Quizz> quizzes = quizzDAO.findAll();
-        for (Quizz quiz : quizzes) {
-            List<String> questionStatements = new ArrayList<>();
-
-            for (int i = 1; i <= 10; i++)
-            {
-                Long questionId = getQuestionIdForQuiz(quiz, i);
-                if (questionId != null)
-                {
-                    questionStatements.add(questionDAO.findById(questionId).orElseThrow().getQuestion());
-                }
-            }
-            quizAndQuestions.put(quiz.getTitre(), questionStatements);
-        }
-        return quizAndQuestions;
-    }
-
-*/
 
     public Map<String, List<Map<String, Object>>> getQuizTitleQuestionsAndAnswersv2() {
         Map<String, List<Map<String, Object>>> quizAndQuestions = new HashMap<>();
         List<Quizz> quizzes = quizzDAO.findAll();
 
         for (Quizz quiz : quizzes) {
+            int i = 1;
             List<Map<String, Object>> questionStatements = new ArrayList<>();
 
-            for (int i = 1; i <= 10; i++) {
-                Long questionId = getQuestionIdForQuiz(quiz, i);
-                if (questionId != null) {
+            for (Long question : quiz.getQuestion_id()) {
+
+
+                if (question != null) {
+
                     Question qa = new Question();
-                    qa.setQuestion(questionDAO.findById(questionId).orElseThrow().getQuestion());
-                    qa.setReponse(questionDAO.findById(questionId).orElseThrow().getReponse());
-                    qa.setId(questionDAO.findById(questionId).orElseThrow().getId());
-                    qa.setHint(questionDAO.findById(questionId).orElseThrow().getHint());
-                    qa.setChoices(questionDAO.findById(questionId).orElseThrow().getChoices());
+                    qa.setQuestion(questionDAO.findById(question).orElseThrow().getQuestion());
+                    qa.setReponse(questionDAO.findById(question).orElseThrow().getReponse());
+                    qa.setId(questionDAO.findById(question).orElseThrow().getId());
+                    qa.setHint(questionDAO.findById(question).orElseThrow().getHint());
+                    qa.setChoices(questionDAO.findById(question).orElseThrow().getChoices());
 
                     Map<String, Object> questionMap = new HashMap<>();
 
@@ -78,6 +60,7 @@ public class QuizzService {
                     // Ajouter d'autres clés/valeurs si nécessaire
 
                     questionStatements.add(questionMap);
+                    i ++;
                 }
             }
 
@@ -86,53 +69,5 @@ public class QuizzService {
 
         return quizAndQuestions;
     }
-
-
-    public Map<Integer, Map<String, String>> getQuizTitleQuestionsAndAnswers() {
-        Map<Integer, Map<String, String>> quizAndQuestions = new HashMap<>();
-        List<Quizz> quizzes = quizzDAO.findAll();
-        for (Quizz quiz : quizzes) {
-            for (int i = 1; i <= 10; i++) {
-                Long questionId = getQuestionIdForQuiz(quiz, i);
-                if (questionId != null) {
-                    Question question = questionDAO.findById(questionId).orElseThrow();
-                    Map<String, String> questionAndAnswer = new HashMap<>();
-                    questionAndAnswer.put("a", questionDAO.findById(questionId).orElseThrow().getQuestion());
-                    questionAndAnswer.put("b", questionDAO.findById(questionId).orElseThrow().getReponse());
-                    quizAndQuestions.put(i, questionAndAnswer);
-                }
-            }
-        }
-
-        return quizAndQuestions;
-    }
-
-    private Long getQuestionIdForQuiz(Quizz quiz, int questionNumber) {
-        switch (questionNumber) {
-            case 1:
-                return quiz.getQ1();
-            case 2:
-                return quiz.getQ2();
-            case 3:
-                return quiz.getQ3();
-            case 4:
-                return quiz.getQ4();
-            case 5:
-                return quiz.getQ5();
-            case 6:
-                return quiz.getQ6();
-            case 7:
-                return quiz.getQ7();
-            case 8:
-                return quiz.getQ8();
-            case 9:
-                return quiz.getQ9();
-            case 10:
-                return quiz.getQ10();
-            default:
-                return null;
-        }
-    }
-
 
 }

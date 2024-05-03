@@ -20,6 +20,7 @@ import java.util.List;
         public List<String> convertToEntityAttribute(String dbData) {
             return dbData != null ? Arrays.asList(dbData.split(",")) : null;
         }
+
     }
 
 

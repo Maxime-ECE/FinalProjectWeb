@@ -15,16 +15,8 @@ public class Quizz {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ma_sequence")
     long id;
     private String titre;
-    private long q1;
-    private long q2;
-    private long q3;
-    private long q4;
-    private long q5;
-    private long q6;
-    private long q7;
-    private long q8;
-    private long q9;
-    private long q10;
+    @Convert(converter = IntListConverter.class)
+    private List<Long> question_id;
     @Lob
     @Column
     private byte[] image;

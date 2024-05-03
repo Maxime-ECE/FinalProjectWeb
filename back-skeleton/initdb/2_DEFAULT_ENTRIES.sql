@@ -47,10 +47,10 @@ VALUES
     (19, 'Quel est le symbole chimique du dioxyde de carbone?', 'CO2', 'CO,CO2,O2,N2', 'Produit lors de la respiration et de la combustion'),
     (20, 'Qui a été la première femme à remporter un prix Nobel?', 'Marie Curie', 'Rosalind Franklin,Marie Curie,Dorothy Crowfoot Hodgkin,Gerty Cori', 'Récompensée pour la physique en 1903 et la chimie en 1911');
 
-INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10,image)
-VALUES ('Mon super quizz', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, null);
-INSERT INTO quizz (titre, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, image)
-VALUES ('Autre quizz', 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, null);
+INSERT INTO quizz (titre, question_id,image)
+VALUES ('Mon super quizz', '1,2,3,4,5,6,7,8,9,10', null);
+INSERT INTO quizz (titre, question_id, image)
+VALUES ('Autre quizz', '11,12,13,14,15,16,17,18,19,20', null);
 
  CREATE SEQUENCE ma_secance;
  ALTER SEQUENCE ma_secance RESTART 10000 increment by 50;
