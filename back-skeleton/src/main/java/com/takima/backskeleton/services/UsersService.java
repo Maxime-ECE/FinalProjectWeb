@@ -23,8 +23,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class UsersService {
-
-
     private final UsersDAO usersDAO;
 
     public List<UserDTO> findAll()
@@ -45,8 +43,6 @@ public class UsersService {
     {
         usersDAO.deleteById(id);
     }
-
-
     @Transactional
     public void addUsers(Users users) {
         try {
@@ -57,8 +53,6 @@ public class UsersService {
         } catch (Exception e) {
             throw new RuntimeException("Error with Users image", e);
         }
-
-
         usersDAO.save(users);
     }
 
@@ -71,6 +65,15 @@ public class UsersService {
         int nouveauScore = user.getScore() + new_score;
         user.setScore(nouveauScore);
         usersDAO.save(user);
+    }
+
+    public Users findByEmail(String email) {
+        return usersDAO.findByEmail(email);
+    }
+
+
+    public void save(Users newUser) {
+        usersDAO.save(newUser);
     }
 }
 

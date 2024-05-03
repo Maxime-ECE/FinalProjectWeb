@@ -1,5 +1,6 @@
 package com.takima.backskeleton.controllers;
 
+import com.takima.backskeleton.DAO.UsersDAO;
 import com.takima.backskeleton.DTO.UserDTO;
 import com.takima.backskeleton.models.Users;
 import com.takima.backskeleton.services.UsersService;
@@ -14,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UsersController {
     private final UsersService usersService;
+    private final UsersDAO usersDAO;
 
     @GetMapping("")
     public List<UserDTO> getAllUsers() {
@@ -46,4 +48,5 @@ public class UsersController {
         // Mettre à jour le score de l'utilisateur
         usersService.scoreModification(user, scoreIncrease);
     }
+
 }
