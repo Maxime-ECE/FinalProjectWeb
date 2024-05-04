@@ -1,6 +1,6 @@
 <div class="card-container">
   <div class="card">
-    <h3 class="title">Card 1</h3>
+    <h3 *ngFor="let name of quizz" class="title">{{name.titre}}</h3>
     <div class="bar">
       <div class="emptybar"></div>
       <div class="filledbar"></div>
