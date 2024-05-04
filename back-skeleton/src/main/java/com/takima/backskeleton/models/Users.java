@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-
 @Entity
 @Table(name = "users")
 @Getter
@@ -21,6 +20,7 @@ public class Users {
     private String email;
     private String password_mdp;
     private int score;
+
     public void setPassword(String password) {
         // Créez un encodeur BCrypt
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -28,7 +28,7 @@ public class Users {
         // Encodez le mot de passe avec BCrypt
         String hashedPassword = passwordEncoder.encode(password);
 
-        // Stockez le mot de passe chiffré dans la base de données
+        // Stockez le mot de passe haché dans la base de données
         this.password_mdp = hashedPassword;
     }
 
@@ -40,9 +40,6 @@ public class Users {
         // Vérifiez si le mot de passe correspond au mot de passe chiffré stocké
         return passwordEncoder.matches(password, this.password_mdp);
     }
-
-
-
 
     public UserDTO toDTO() {
         UserDTO dto = new UserDTO();
@@ -56,7 +53,7 @@ public class Users {
     }
 
     public Users score(int score) {
-        this.score= score;
+        this.score = score;
         return this;
     }
 }

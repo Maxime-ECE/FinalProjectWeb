@@ -2,14 +2,12 @@ package com.takima.backskeleton.services;
 
 
 import com.takima.backskeleton.DAO.UsersDAO;
-import com.takima.backskeleton.DTO.StudentDto;
-import com.takima.backskeleton.DTO.StudentMapper;
+
 import com.takima.backskeleton.DTO.UserDTO;
-import com.takima.backskeleton.models.Student;
 import com.takima.backskeleton.models.Users;
-import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
-import org.springframework.beans.factory.annotation.Autowired;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +22,7 @@ import java.util.stream.Collectors;
 @Service
 public class UsersService {
     private final UsersDAO usersDAO;
-
+    private final BCryptPasswordEncoder passwordEncoder;
     public List<UserDTO> findAll()
     {
 
@@ -74,6 +72,15 @@ public class UsersService {
 
     public void save(Users newUser) {
         usersDAO.save(newUser);
+    }
+
+
+
+
+
+    public void saveUser(Users user) {
+        String hashedPassword = passwordEncoder.encode(user.getPassword_mdp());
+        user.setPassword(hashedPassword);
     }
 }
 
