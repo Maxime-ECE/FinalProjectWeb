@@ -36,8 +36,6 @@ public class Users {
     public boolean checkPassword(String password) {
         // Créez un encodeur BCrypt
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
-        // Vérifiez si le mot de passe correspond au mot de passe chiffré stocké
         return passwordEncoder.matches(password, this.password_mdp);
     }
 
