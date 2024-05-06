@@ -5,6 +5,7 @@ import com.takima.backskeleton.models.Question;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,18 +39,20 @@ public class QuestionService {
 
     @Transactional
     public void addQuestion(Question question) {
-        try {
-
-            if (question == null) {
-                throw new IllegalArgumentException("question object cannot be null");
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("Error with question image", e);
+        if (question == null) {
+            throw new IllegalArgumentException("question object cannot be null");
         }
 
+        Long questionId = question.getId();
+        if (questionId != null && questionDAO.existsById(questionId)) {
+            throw new RuntimeException("Question with id " + questionId + " already exists");
+        }
 
-        questionDAO.save(question);
+        try {
+            questionDAO.save(question);
+        } catch (DataIntegrityViolationException e) {
+            throw new RuntimeException("Error with question data integrity", e);
+        }
     }
-
 
 }

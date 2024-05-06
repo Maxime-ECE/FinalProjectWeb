@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FinalProject.iml" filepath="$PROJECT_DIR$/.idea/FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ProjetWeb.iml" filepath="$PROJECT_DIR$/.idea/ProjetWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-skeleton/back-skeleton.iml" filepath="$PROJECT_DIR$/back-skeleton/back-skeleton.iml" />
     </modules>
   </component>
 </project>
