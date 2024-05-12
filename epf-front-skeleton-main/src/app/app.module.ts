@@ -16,13 +16,14 @@ import { MajorsComponent } from "majors/majors.component"
 import { MajorStudentsComponent } from "majors/major-students/major-students.component"
 import { HttpClientModule } from "@angular/common/http";
 import { CardContainerComponent } from './card-container/card-container.component'
-import { ParticiperComponent } from './participer/participer.component';
 import { ClassementComponent } from './classement/classement.component';
 import { CreerComponent } from './creer/creer.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateOwnQuestionsComponent } from './create-own-questions/create-own-questions.component';
 import { CreateWithExistingQuizComponent } from './create-with-existing-quiz/create-with-existing-quiz.component'
+import { QuizzEnCours } from './quizz-en-cours/quizz-en-cours.component';
+import { Connecté } from "./connecté/connecté.component"
 
 @NgModule({
   declarations: [
@@ -34,13 +35,14 @@ import { CreateWithExistingQuizComponent } from './create-with-existing-quiz/cre
     MajorsComponent,
     MajorStudentsComponent,
     CardContainerComponent,
-    ParticiperComponent,
     ClassementComponent,
     CreerComponent,
     ConnexionComponent,
     FooterComponent,
     CreateOwnQuestionsComponent,
     CreateWithExistingQuizComponent,
+    QuizzEnCours,
+    Connecté,
   ],
   imports: [
     BrowserModule,

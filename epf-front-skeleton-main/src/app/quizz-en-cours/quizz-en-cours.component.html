@@ -1,0 +1,28 @@
+<div class="quiz-container" *ngIf="currentQuestion">
+  <div class="question-box">
+    <h2 class="title">{{ currentQuestion.questionText }}</h2>
+  </div>
+  <div class="options">
+    <div *ngFor="let choice of currentQuestion.choice"
+         class="option"
+         (click)="selectAnswer(choice)"
+         [class.selected]="selectedOption === choice"
+         [ngClass]="{
+           'correct': choice === currentQuestion.reponse,
+           'wrong':  selectedOption !== currentQuestion.reponse,
+           'selected': selectedOption === choice
+         }">
+      {{ choice }}
+    </div>
+  </div>
+  <div *ngIf="showAnswer" class="answer" [ngClass]="{
+    'correct': showAnswer && selectedOption === currentQuestion.reponse,
+    'wrong': showAnswer && selectedOption !== currentQuestion.reponse
+  }">
+    Réponse : {{ currentQuestion.reponse }}
+  </div>
+  <div class="btn-container">
+    <button class="btn" (click)="checkAnswer()">Vérifier ma réponse !</button>
+    <button class="btn" (click)="nextQuestion()">Question suivante !</button>
+  </div>
+</div>

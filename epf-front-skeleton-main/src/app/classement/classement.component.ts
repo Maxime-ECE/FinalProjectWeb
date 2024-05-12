@@ -12,9 +12,9 @@ import { UserService } from "../services/user.service"
 export class ClassementComponent implements OnInit {
   constructor(private userService: UserService) { }
 
-  aaa: Users[] = [];
+  user: Users[] = [];
   ngOnInit(): void {
-    this.userService.findAll().subscribe(tableau => this.aaa = tableau);
+    this.userService.findAll().subscribe(tableau => this.user = tableau);
   }
 
 }

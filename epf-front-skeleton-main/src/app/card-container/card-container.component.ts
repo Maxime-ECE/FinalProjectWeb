@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizzModel } from "../models/quizz.model";
+import { QuizzService } from "../services/quizz.service"
 
 @Component({
   selector: 'epf-card-container',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-container.component.scss']
 })
 export class CardContainerComponent implements OnInit {
+  constructor(private quizzService: QuizzService) { }
 
-  constructor() { }
-
+  quizz: QuizzModel[] = [];
   ngOnInit(): void {
+    this.quizzService.findAll().subscribe(tableau => this.quizz = tableau);
   }
 
 }

@@ -5,7 +5,8 @@ import com.takima.backskeleton.DAO.QuizzDAO;
 import com.takima.backskeleton.models.Question;
 import com.takima.backskeleton.models.Quizz;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.antlr.v4.runtime.misc.Pair;
+
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -27,50 +28,78 @@ public class QuizzService {
     {
         return quizzDAO.findAll();
     }
-    public Map<String, List<String>> getQuizTitleAndQuestions() {
-        Map<String, List<String>> quizAndQuestions = new HashMap<>();
 
+    public Map<String, List<Map<String, Object>>> getQuizTitleQuestionsAndAnswersv2() {
+        Map<String, List<Map<String, Object>>> quizAndQuestions = new HashMap<>();
         List<Quizz> quizzes = quizzDAO.findAll();
 
         for (Quizz quiz : quizzes) {
-            List<String> questionStatements = new ArrayList<>();
-            for (int i = 1; i <= 10; i++) { // Assuming you have maximum 10 questions per quiz
-                Long questionId = getQuestionIdForQuiz(quiz, i);
-                if (questionId != null) {
-                    questionStatements.add(questionDAO.getById(questionId).getQuestion());
+            int i = 1;
+            List<Map<String, Object>> questionStatements = new ArrayList<>();
+
+            for (Long question : quiz.getQuestion_id()) {
+
+
+                if (question != null) {
+
+                    Question qa = new Question();
+                    qa.setQuestion(questionDAO.findById(question).orElseThrow().getQuestion());
+                    qa.setReponse(questionDAO.findById(question).orElseThrow().getReponse());
+                    qa.setId(questionDAO.findById(question).orElseThrow().getId());
+                    qa.setHint(questionDAO.findById(question).orElseThrow().getHint());
+                    qa.setChoices(questionDAO.findById(question).orElseThrow().getChoices());
+
+                    Map<String, Object> questionMap = new HashMap<>();
+
+                    questionMap.put("numeroQuestion", String.valueOf(i)); // Numéro de question
+                    questionMap.put("questionText", qa.getQuestion());
+                    questionMap.put("reponse", qa.getReponse());
+                    questionMap.put("choice", qa.getChoices());
+                    questionMap.put("id_question", String.valueOf(qa.getId()));
+                    questionMap.put("indice", qa.getHint());
+                    // Ajouter d'autres clés/valeurs si nécessaire
+
+                    questionStatements.add(questionMap);
+                    i ++;
                 }
             }
+
             quizAndQuestions.put(quiz.getTitre(), questionStatements);
         }
 
         return quizAndQuestions;
     }
 
-    private Long getQuestionIdForQuiz(Quizz quiz, int questionNumber) {
-        switch (questionNumber) {
-            case 1:
-                return quiz.getQ1();
-            case 2:
-                return quiz.getQ1();
-            case 3:
-                return quiz.getQ3();
-            case 4:
-                return quiz.getQ4();
-            case 5:
-                return quiz.getQ5();
-            case 6:
-                return quiz.getQ6();
-            case 7:
-                return quiz.getQ7();
-            case 8:
-                return quiz.getQ8();
-            case 9:
-                return quiz.getQ9();
-            case 10:
-                return quiz.getQ10();
-            default:
-                return null;
+    public List<Map<String, Object>> getQuizTitleQuestionsAndAnswersWithId() {
+        List<Map<String, Object>> quizAndQuestions = new ArrayList<>();
+        List<Quizz> quizzes = quizzDAO.findAll();
+
+        for (Quizz quiz : quizzes) {
+            int i = 1;
+            List<Map<String, Object>> questionStatements = new ArrayList<>();
+
+            for (Long question : quiz.getQuestion_id()) {
+                if (question != null) {
+                    Question qa = questionDAO.findById(question).orElseThrow();
+                    Map<String, Object> questionMap = new HashMap<>();
+
+                    questionMap.put("id", quiz.getId()); // Ajoute l'ID du quiz
+                    questionMap.put("titre", quiz.getTitre()); // Ajoute le titre du quiz
+                    questionMap.put("numeroQuestion", String.valueOf(i)); // Numéro de question
+                    questionMap.put("questionText", qa.getQuestion());
+                    questionMap.put("reponse", qa.getReponse());
+                    questionMap.put("choice", qa.getChoices());
+                    questionMap.put("indice", qa.getHint());
+
+                    questionStatements.add(questionMap);
+                    i++;
+                }
+            }
+
+            quizAndQuestions.addAll(questionStatements);
         }
+
+        return quizAndQuestions;
     }
 
 
