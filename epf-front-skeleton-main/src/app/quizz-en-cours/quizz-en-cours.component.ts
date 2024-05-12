@@ -21,6 +21,7 @@ export class QuizzEnCours implements OnInit {
   ngOnInit(): void {
     this.quizzService.getQuizzWithQuestionsAndAnswers().subscribe(data => {
       this.quizz = data;
+      this.correctAnswer = this.quizz['Mon super quizz'][4].reponse;
       console.log(data);
     });
   }
@@ -40,6 +41,8 @@ export class QuizzEnCours implements OnInit {
   }
 
   nextQuestion() {
-    this.router.navigate(['../']);
+
   }
+
+
 }

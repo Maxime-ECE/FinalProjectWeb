@@ -22,5 +22,8 @@
   }">
     Réponse : {{ quizz['Mon super quizz'][4].reponse }}
   </div>
-  <button (click)="checkAnswer()">Question suivante !</button>
+  <div class="btn-container">
+    <button class="btn" (click)="checkAnswer()">Vérifier ma réponse !</button>
+    <button class="btn" (click)="nextQuestion()">Question suivante !</button>
+  </div>
 </div>
