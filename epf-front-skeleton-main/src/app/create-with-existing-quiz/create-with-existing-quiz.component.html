@@ -1,11 +1,14 @@
-<div class="quiz-container">
+<div class="quiz-container" *ngIf="quizz">
   <h2>Créer un Quiz avec des Questions Prédéfinies</h2>
   <div class="form-group">
     <label for="select-question">Choisir une question :</label>
     <select id="select-question" name="select-question" class="form-control">
-      <option value="1">Question 1</option>
-      <option value="2">Question 2</option>
-      <option value="3">Question 3</option>
+      <option value="1" >{{ quizz[4]["questionText"] }}</option>
+      <option value="2">{{ quizz[3]["questionText"] }}</option>
+      <option value="3">{{ quizz[2]["questionText"] }}</option>
+      <option value="3">{{ quizz[1]["questionText"] }}</option>
+      <option value="3">{{ quizz[9]["questionText"] }}</option>
+      <option value="3">{{ quizz[8]["questionText"] }}</option>
       <!-- Ajoutez d'autres options pour d'autres questions prédéfinies -->
     </select>
   </div>
@@ -25,4 +28,5 @@
     <label for="answer4">Réponse 4 :</label>
     <textarea id="answer4" name="answer4" class="form-control" rows="3"></textarea>
   </div>
+  <button>Enregistrer</button>
 </div>
