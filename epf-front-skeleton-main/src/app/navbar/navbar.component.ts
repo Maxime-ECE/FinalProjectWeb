@@ -11,7 +11,6 @@ export class NavbarComponent {
 
   constructor() {
     this.links.push({ name: "Accueil", href: "" })
-    this.links.push({ name: "Participer", href: "participer" })
     this.links.push({ name: "Classement", href: "classement" })
     this.links.push({ name: "Créer", href: "creer" })
     this.links.push({ name: "Connexion", href: "connexion" })
