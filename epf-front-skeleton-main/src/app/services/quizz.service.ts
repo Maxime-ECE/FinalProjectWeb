@@ -19,5 +19,10 @@ export class QuizzService {
   getQuizzWithQuestionsAndAnswers(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/quizz/title-and-questions-ANSWERS`);
   }
+
+  getQuizTitleQuestionsAndAnswersWithId(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/quizz/title-and-questions-ANSWERS-with-id`);
+  }
+
 }
 

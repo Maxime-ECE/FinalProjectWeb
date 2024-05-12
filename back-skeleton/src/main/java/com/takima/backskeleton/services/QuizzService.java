@@ -70,4 +70,37 @@ public class QuizzService {
         return quizAndQuestions;
     }
 
+    public List<Map<String, Object>> getQuizTitleQuestionsAndAnswersWithId() {
+        List<Map<String, Object>> quizAndQuestions = new ArrayList<>();
+        List<Quizz> quizzes = quizzDAO.findAll();
+
+        for (Quizz quiz : quizzes) {
+            int i = 1;
+            List<Map<String, Object>> questionStatements = new ArrayList<>();
+
+            for (Long question : quiz.getQuestion_id()) {
+                if (question != null) {
+                    Question qa = questionDAO.findById(question).orElseThrow();
+                    Map<String, Object> questionMap = new HashMap<>();
+
+                    questionMap.put("id", quiz.getId()); // Ajoute l'ID du quiz
+                    questionMap.put("titre", quiz.getTitre()); // Ajoute le titre du quiz
+                    questionMap.put("numeroQuestion", String.valueOf(i)); // Numéro de question
+                    questionMap.put("questionText", qa.getQuestion());
+                    questionMap.put("reponse", qa.getReponse());
+                    questionMap.put("choice", qa.getChoices());
+                    questionMap.put("indice", qa.getHint());
+
+                    questionStatements.add(questionMap);
+                    i++;
+                }
+            }
+
+            quizAndQuestions.addAll(questionStatements);
+        }
+
+        return quizAndQuestions;
+    }
+
+
 }

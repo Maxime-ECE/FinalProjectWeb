@@ -11,20 +11,31 @@ import { HttpClient } from "@angular/common/http"
   styleUrls: ['./quizz-en-cours.component.scss']
 })
 export class QuizzEnCours implements OnInit {
-  quizz: any = {}; // Utilisez un type approprié pour vos objets quizz
+  quizz: any = {};
   selectedOption: string = '';
   correctAnswer: string = '';
   showAnswer: boolean = false;
-
-  constructor(private router: Router, private quizzService: QuizzService, private http: HttpClient) { }
+  currentQuizId: any = 1;
+  currentQuestionIndex: number = 0;
+  name : string = '';
+  constructor(private quizzService: QuizzService) { }
 
   ngOnInit(): void {
-    this.quizzService.getQuizzWithQuestionsAndAnswers().subscribe(data => {
+    this.quizzService.getQuizTitleQuestionsAndAnswersWithId().subscribe(data => {
       this.quizz = data;
-      this.correctAnswer = this.quizz['Mon super quizz'][4].reponse;
-      console.log(data);
+      if (this.quizz && this.quizz.length > 0) {
+        const actualQestion = this.quizz.find((quiz: any) => quiz.id === this.currentQuizId);
+        if (actualQestion) {
+          this.name = actualQestion.titre;
+          this.correctAnswer = actualQestion.reponse;
+          console.log(actualQestion);
+        } else {
+          console.log("Le premier quiz n'a pas été trouvé.");
+        }
+      }
     });
   }
+
 
   checkAnswer() {
     if (this.selectedOption === this.correctAnswer) {
@@ -41,8 +52,19 @@ export class QuizzEnCours implements OnInit {
   }
 
   nextQuestion() {
+    this.currentQuestionIndex += 1; // Incrémente l'index de la question actuelle
 
+    if (this.currentQuestionIndex < this.quizz.length) {
+      const question = this.quizz[this.currentQuestionIndex]; // Récupère la prochaine question
+   console.log(question);
+      this.selectedOption = ''; // Réinitialise la réponse sélectionnée
+      this.correctAnswer = question.reponse; // Met à jour la réponse correcte
+      this.showAnswer = false; // Cache la réponse
+    } else {
+      alert('Félicitations, vous avez terminé le quiz !'); // Message lorsque toutes les questions ont été répondues
+    }
   }
+
 
 
 }

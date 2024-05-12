@@ -48,9 +48,9 @@ VALUES
     (20, 'Qui a été la première femme à remporter un prix Nobel?', 'Marie Curie', 'Rosalind Franklin,Marie Curie,Dorothy Crowfoot Hodgkin,Gerty Cori', 'Récompensée pour la physique en 1903 et la chimie en 1911');
 
 INSERT INTO quizz (titre, question_id,image)
-VALUES ('Mon super quizz', '1,2,3,4,5,6,7,8,9,10', null);
+VALUES ('Mon-super-quizz', '1,2,3,4,5,6,7,8,9,10', null);
 INSERT INTO quizz (titre, question_id, image)
-VALUES ('Autre quizz', '11,12,13,14,15,16,17,18,19,20', null);
+VALUES ('Autre-quizz', '11,12,13,14,15,16,17,18,19,20', null);
 
 CREATE SEQUENCE ma_sequence;
 ALTER SEQUENCE ma_sequence RESTART 10000 increment by 50;

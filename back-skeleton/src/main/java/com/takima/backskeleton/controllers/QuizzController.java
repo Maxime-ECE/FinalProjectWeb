@@ -35,5 +35,9 @@ public class QuizzController {
     public Map<String, List<Map<String, Object>>> getQuizTitleAndQuestionsaNDaNWSERv2() {
         return quizzService.getQuizTitleQuestionsAndAnswersv2();
     }
+    @GetMapping("/title-and-questions-ANSWERS-with-id")
+    public List<Map<String, Object>> getQuizTitleQuestionsAndAnswersWithId() {
+        return quizzService.getQuizTitleQuestionsAndAnswersWithId();
+    }
 }
 

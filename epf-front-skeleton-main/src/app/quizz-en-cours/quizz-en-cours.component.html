@@ -1,26 +1,25 @@
 <div class="quiz-container" *ngIf="quizz">
   <div class="question-box">
-    <h2 class="title">{{ quizz["Mon super quizz"][4]["questionText"] }}</h2>
+    <h2 class="title">{{ quizz[currentQuestionIndex].questionText }}</h2>
   </div>
   <div class="options">
-    <div *ngFor="let choice of quizz['Mon super quizz'][4].choice"
+    <div *ngFor="let choice of quizz[currentQuestionIndex].choice"
          class="option"
          (click)="selectAnswer(choice)"
          [class.selected]="selectedOption === choice"
-
          [ngClass]="{
-           'correct': choice === quizz['Mon super quizz'][4].reponse,
-           'wrong':  selectedOption !== quizz['Mon super quizz'][4].reponse,
+           'correct': choice === quizz[currentQuestionIndex].reponse,
+           'wrong':  selectedOption !== quizz[currentQuestionIndex].reponse,
            'selected': selectedOption === choice
          }">
       {{ choice }}
     </div>
   </div>
   <div *ngIf="showAnswer" class="answer" [ngClass]="{
-    'correct': showAnswer && selectedOption === quizz['Mon super quizz'][4].reponse,
-    'wrong': showAnswer && selectedOption !== quizz['Mon super quizz'][4].reponse
+    'correct': showAnswer && selectedOption === quizz[currentQuestionIndex].reponse,
+    'wrong': showAnswer && selectedOption !== quizz[currentQuestionIndex].reponse
   }">
-    Réponse : {{ quizz['Mon super quizz'][4].reponse }}
+    Réponse : {{ quizz[currentQuestionIndex].reponse }}
   </div>
   <div class="btn-container">
     <button class="btn" (click)="checkAnswer()">Vérifier ma réponse !</button>
