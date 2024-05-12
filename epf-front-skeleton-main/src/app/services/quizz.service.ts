@@ -12,8 +12,12 @@ export class QuizzService {
   }
 
   private userURL = "http://localhost:8080/quizz"
+  private apiUrl :string =  "http://localhost:8080"
   findAll(): Observable<QuizzModel[]> {
     return this.http.get<QuizzModel[]>(this.userURL)
+  }
+  getQuizzWithQuestionsAndAnswers(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/quizz/title-and-questions-ANSWERS`);
   }
 }
 
