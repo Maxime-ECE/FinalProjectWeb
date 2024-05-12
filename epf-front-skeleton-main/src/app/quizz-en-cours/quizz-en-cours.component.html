@@ -1,0 +1,12 @@
+<div class="quiz-container">
+  <div class="question-box">
+    <h2 id="question">Question 1: Quelle est la capitale de la France ?</h2>
+  </div>
+  <div class="options">
+    <div class="option" (click)="selectAnswer('Paris')" [class.selected]="selectedOption === 'Paris'">Paris</div>
+    <div class="option" (click)="selectAnswer('Londres')" [class.selected]="selectedOption === 'Londres'">Londres</div>
+    <div class="option" (click)="selectAnswer('Berlin')" [class.selected]="selectedOption === 'Berlin'">Berlin</div>
+    <div class="option" (click)="selectAnswer('Rome')" [class.selected]="selectedOption === 'Rome'">Rome</div>
+  </div>
+  <button (click)="checkAnswer(); nextQuestion()">Question suivante !</button>
+</div>

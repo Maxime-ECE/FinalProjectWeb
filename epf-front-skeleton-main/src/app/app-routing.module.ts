@@ -17,6 +17,8 @@ import { ConnexionComponent } from "./connexion/connexion.component"
 import { FooterComponent } from "./footer/footer.component"
 import { CreateOwnQuestionsComponent } from './create-own-questions/create-own-questions.component';
 import { CreateWithExistingQuizComponent } from './create-with-existing-quiz/create-with-existing-quiz.component';
+import { QuizzEnCours } from "./quizz-en-cours/quizz-en-cours.component"
+import { Connecté } from "./connecté/connecté.component"
 
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'create-own-questions', component: CreateOwnQuestionsComponent },
   { path: 'create-with-existing-quiz', component: CreateWithExistingQuizComponent },
+  { path: 'quizz-en-cours', component: QuizzEnCours},
+  { path: 'connecté', component: Connecté},
 
   {
     path: "students",

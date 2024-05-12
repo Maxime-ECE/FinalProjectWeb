@@ -1,17 +1,20 @@
-import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'epf-connexion',
+  selector: 'app-connexion',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })
-export class ConnexionComponent implements OnInit {
-  email: any;
-  password: any;
+export class ConnexionComponent {
+  username: string = '';
+  password: string = '';
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  login() {
+    // Vérifiez les informations d'identification ici
+    // Si les informations sont correctes, redirigez vers la page connectée
+    this.router.navigate(['../connecté', { username: this.username }]);
   }
-
 }
