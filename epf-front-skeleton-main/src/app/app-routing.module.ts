@@ -29,8 +29,8 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: 'create-own-questions', component: CreateOwnQuestionsComponent },
   { path: 'create-with-existing-quiz', component: CreateWithExistingQuizComponent },
-  { path: 'quizz-en-cours', component: QuizzEnCours},
   { path: 'connecté', component: Connecté},
+  { path: 'quizz-en-cours/:id', component: QuizzEnCours },
 
   {
     path: "students",

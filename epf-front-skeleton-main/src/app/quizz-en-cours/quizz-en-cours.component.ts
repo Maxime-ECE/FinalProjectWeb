@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { QuizzService } from "../services/quizz.service"
-import { QuizzModel } from "../models/quizz.model"
-import { HttpClient } from "@angular/common/http"
-
 
 @Component({
   selector: 'epf-quizz-en-cours',
@@ -12,30 +9,51 @@ import { HttpClient } from "@angular/common/http"
 })
 export class QuizzEnCours implements OnInit {
   quizz: any = {};
+  currentQuestion: any;
   selectedOption: string = '';
   correctAnswer: string = '';
   showAnswer: boolean = false;
-  currentQuizId: any = 1;
+  currentQuizId: any;
   currentQuestionIndex: number = 0;
   name : string = '';
-  constructor(private quizzService: QuizzService) { }
+  questions: any[] = [];
+
+  constructor(private route: ActivatedRoute, private quizzService: QuizzService) { }
 
   ngOnInit(): void {
-    this.quizzService.getQuizTitleQuestionsAndAnswersWithId().subscribe(data => {
-      this.quizz = data;
-      if (this.quizz && this.quizz.length > 0) {
-        const actualQestion = this.quizz.find((quiz: any) => quiz.id === this.currentQuizId);
-        if (actualQestion) {
-          this.name = actualQestion.titre;
-          this.correctAnswer = actualQestion.reponse;
-          console.log(actualQestion);
-        } else {
-          console.log("Le premier quiz n'a pas été trouvé.");
+    this.route.paramMap.subscribe(params => {
+      this.currentQuizId = Number(params.get('id')) || 0; // Convertit l'ID en number
+      this.quizzService.getQuizTitleQuestionsAndAnswersWithId().subscribe(data => {
+        this.quizz = data;
+        console.log(this.quizz);
+
+        if (this.quizz && this.quizz.length > 0) {
+          // Utilise === pour comparer les types également
+          const currentQuiz = this.quizz.find((quiz: any) => quiz.id === this.currentQuizId);
+          console.log(currentQuiz);
+          if (currentQuiz) {
+            this.name = currentQuiz.titre;
+            // Maintenant, nous devons filtrer les questions pertinentes pour ce quiz
+            this.questions = this.quizz.filter((quiz: any) => quiz.id === this.currentQuizId);
+            // Initialisez l'index de la question à zéro pour afficher la première question
+            this.currentQuestionIndex = 0;
+            this.updateCurrentQuestion(); // Met à jour la question actuelle à afficher
+          } else {
+            console.log("Le quiz n'a pas été trouvé.");
+          }
         }
-      }
+      });
     });
   }
 
+  // Ajoutez cette méthode pour mettre à jour la question actuelle à afficher
+  updateCurrentQuestion() {
+    if (this.questions && this.questions.length > 0) {
+      this.currentQuestion = this.questions[this.currentQuestionIndex];
+      this.correctAnswer = this.currentQuestion.reponse;
+      this.showAnswer = false;
+    }
+  }
 
   checkAnswer() {
     if (this.selectedOption === this.correctAnswer) {
@@ -46,6 +64,7 @@ export class QuizzEnCours implements OnInit {
       this.showAnswer = true;
     }
   }
+
   selectAnswer(option: string) {
     this.selectedOption = option;
     console.log('Option sélectionnée :', this.selectedOption);
@@ -54,17 +73,10 @@ export class QuizzEnCours implements OnInit {
   nextQuestion() {
     this.currentQuestionIndex += 1; // Incrémente l'index de la question actuelle
 
-    if (this.currentQuestionIndex < this.quizz.length) {
-      const question = this.quizz[this.currentQuestionIndex]; // Récupère la prochaine question
-   console.log(question);
-      this.selectedOption = ''; // Réinitialise la réponse sélectionnée
-      this.correctAnswer = question.reponse; // Met à jour la réponse correcte
-      this.showAnswer = false; // Cache la réponse
+    if (this.currentQuestionIndex < this.questions.length) {
+      this.updateCurrentQuestion(); // Met à jour la question actuelle à afficher
     } else {
       alert('Félicitations, vous avez terminé le quiz !'); // Message lorsque toutes les questions ont été répondues
     }
   }
-
-
-
 }
