@@ -10,7 +10,6 @@ import { MajorsResolver } from "majors/majors.resolver"
 import { MajorStudentsResolver } from "majors/major-students/major-students.resolver"
 import { MajorStudentsComponent } from "majors/major-students/major-students.component"
 import { CardContainerComponent } from "./card-container/card-container.component"
-import { ParticiperComponent } from "./participer/participer.component"
 import { ClassementComponent } from "./classement/classement.component"
 import { CreerComponent } from "./creer/creer.component"
 import { ConnexionComponent } from "./connexion/connexion.component"
@@ -24,7 +23,6 @@ import { Connecté } from "./connecté/connecté.component"
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "card-container", component: CardContainerComponent },
-  { path: 'participer', component: ParticiperComponent },
   { path: 'classement', component: ClassementComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'creer', component: CreerComponent },
